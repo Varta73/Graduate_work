@@ -1,0 +1,27 @@
+{% load static %}
+
+{% include 'restaurant/includes/header.html' %}
+
+{% block content %}
+
+<main class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column align-items-center text-center">
+    <img src="/media/tavola.jpg" class="card-img-top img-fluid mb-3" style="max-height: 350px; object-fit: cover;" alt="La Tavola">
+
+
+        <div class="card-body">
+            <p class="card-text" style="font-size: 0.90rem;">“La Tavola” была основана в 2010 году семьёй Гальяно, приехавшей в Россию из Тосканы.</p>
+            <p class="card-text" style="font-size: 0.90rem;">С самого начала их целью было не просто открыть очередной ресторан, а привить любовь к настоящей итальянской кухне.</p>
+            <p class="card-text" style="font-size: 0.90rem;">За более чем десятилетие “La Tavola” стала любимым местом москвичей, сохранив при этом свои корни и дух маленького семейного заведения.</p>
+        </div>
+            <div class="d-flex gap-2 justify-content-center">
+                <a href="{% url 'restaurant:about' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">Назад</a>
+                <a href="{% url 'restaurant:main' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">На главную</a>
+            </div>
+
+
+</main>
+
+{% endblock %}
+
+
+

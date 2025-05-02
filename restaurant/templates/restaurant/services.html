@@ -1,0 +1,43 @@
+{% extends 'restaurant/home.html' %}
+{% load my_tags %}
+{% block content %}
+
+<main class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column align-items-center text-center">
+    <img src="/media/tavola.jpg" class="card-img-top img-fluid mb-3" style="max-height: 350px; object-fit: cover;" alt="La Tavola">
+
+    <div class="card text-dark bg-light mb-1 shadow rounded" style="max-width: 50rem; width: 100%;">
+        <div class="card-header h5">Перечень предоставляемых услуг:</div>
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="/media/alarm.svg" width="16" height="16" class="me-2 invert-white" alt="Alarm">
+                <p class="card-text mb-0">Онлайн-бронирование столиков (в том числе на открытой террасе).</p>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="/media/boxes.svg" width="16" height="16" class="me-2 invert-white" alt="Boxes">
+                <p class="card-text mb-0">Проведение банкетов, дней рождений, корпоративов.</p>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="/media/cake2.svg" width="16" height="16" class="me-2 invert-white" alt="Cake2">
+                <p class="card-text mb-0">Детское меню и детская зона.</p>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="/media/suit-club.svg" width="16" height="16" class="me-2 invert-white" alt="Suit-club">
+                <p class="card-text mb-0">Специальные дегустационные ужины по пятницам.</p>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="/media/loyalty.svg" width="16" height="16" class="me-2 invert-white" alt="Loyalty">
+                <p class="card-text">Программа лояльности для постоянных клиентов.</p>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex gap-2 justify-content-center mb-2">
+        <a href="{% url 'restaurant:main' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">Назад</a>
+        <a class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0" href="{% url 'restaurant:about' %}">О ресторане</a>
+    </div>
+</main>
+
+{% endblock %}

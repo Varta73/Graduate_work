@@ -1,0 +1,73 @@
+{% extends 'restaurant/home.html' %}
+{% load my_tags %}
+{% block content %}
+
+<main class="px-3">
+    <div class="container">
+        <p></p>
+        {% if messages %}
+            <div class="messages text-center">
+                {% for message in messages %}
+                    <label class="btn btn-outline-success" for="success-outlined">
+                        {{ message }}
+                    </label>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <p></p>
+
+        <div class="row g-4">
+            <!-- Контактная информация -->
+            <div class="col-md-6">
+                <div class="card bg-light text-dark shadow-sm text-center h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Контактная информация</h4>
+                        <div class="card-text fw-semibold" style="font-size: 0.95rem;">
+                            <p>Адрес: г. Москва, ул. Большая Никитская, д.25</p>
+                            <p>Режим работы:</p>
+                            <p>Пн–Чт: 12:00–23:00<br>Пт–Сб: 12:00–01:00<br>Вс: 12:00–22:00</p>
+                            <p>Телефон: +7 (495) 123-45-67</p>
+                            <p>Email: info@latavola.ru</p>
+                            <p>Instagram: @latavola.moscow</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Форма обратной связи -->
+            <div class="col-md-6">
+                <div class="card bg-light shadow-sm h-100">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Обратная связь</h4>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name">Имя:</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone">Телефон:</label>
+                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Контактный телефон" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message">Сообщение:</label>
+                                <textarea name="message" class="form-control" id="message" placeholder="Введите сообщение" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-dark">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p></p>
+        <div class="d-flex gap-2 justify-content-center">
+            <a href="{% url 'restaurant:main' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">Назад</a>
+            <a class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0" href="{% url 'restaurant:about' %}">О ресторане</a>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
