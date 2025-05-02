@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${DATABASE_PORT}
+    restart: on-failure
+    env_file:
+      - .env
+    expose:
+      - "5432"
+    volumes:
+      - .pg_data:/etc/postgresql/17/main
+    healthcheck:
+      test: ["CMD-SHELL", "-c", "pg_isready -U $DATABASE_USER"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+
+
+  app:
+    build: .
+    tty: true
+    ports:
+      - "8000:8000"
+    command: sh -c "sleep 10 && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:DATABASE_PASSWORD@db:5432/POSTGRES_DB
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+
+
+volumes:
+  pg_data:

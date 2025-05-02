@@ -1,0 +1,33 @@
+{% extends 'restaurant/home.html' %}
+{% load my_tags %}
+{% block content %}
+
+<main class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column align-items-center text-center">
+    <img src="/media/tavola.jpg" class="card-img-top img-fluid" style="max-height: 350px; object-fit: cover;" alt="La Tavola">
+
+
+    <div class="card text-white bg-dark mb-3 text-center" style="max-width: 50rem; width: 100%;">
+        <div class="card-header fs-5">Миссия</div>
+        <div class="card-body">
+            <p class="card-text mb-0">Предоставлять гостям возможность прикоснуться к подлинной итальянской гастрономической культуре, объединяя еду, атмосферу и душевность.</p>
+        </div>
+    </div>
+
+    <div class="card text-white bg-dark mb-4 text-center" style="max-width: 50rem; width: 100%;">
+        <div class="card-header fs-5">Ценности</div>
+        <div class="card-body">
+            <p class="card-text mb-0">Аутентичность рецептов</p>
+            <p class="card-text mb-0">Продукты высочайшего качества</p>
+            <p class="card-text mb-0">Искренний сервис</p>
+            <p class="card-text mb-0">Забота о каждом госте</p>
+            <p class="card-text">Честность и прозрачность во всём</p>
+        </div>
+    </div>
+
+    <div class="d-flex gap-2 justify-content-center">
+        <a class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0" href="{% url 'restaurant:about' %}">Назад</a>
+        <a href="{% url 'restaurant:main' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">На Главную</a>
+    </div>
+</main>
+
+{% endblock %}

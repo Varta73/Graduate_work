@@ -1,0 +1,22 @@
+{% extends 'restaurant/home.html' %}
+{% load my_tags %}
+{% block content %}
+
+<main class="cover-container d-flex w-100 h-100 p-1 mx-auto flex-column">
+    <img src="/media/tavola.jpg" class="card-img-top img-fluid" style="max-height: 350px; object-fit: cover;" alt="La Tavola">
+    <p></p>
+
+    <div class="card-body">
+
+        <h2 class="card-title">Добро пожаловать в “La Tavola” — ресторан, где каждый рецепт рассказывает историю.</h2>
+        <p class="card-text">“La Tavola” — это уютный итальянский ресторан в центре города, предлагающий аутентичную кухню, высококлассный сервис и атмосферу тёплого гостеприимства. Интерьер сочетает в себе традиционные элементы и современный минимализм, создавая комфортное пространство как для деловых встреч, так и для романтических ужинов.</p>
+
+        <div class="d-flex gap-2 justify-content-center">
+            <a href="{% url 'restaurant:services' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">Услуги</a>
+            <a href="{% url 'restaurant:contacts' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">Контактная информация</a>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

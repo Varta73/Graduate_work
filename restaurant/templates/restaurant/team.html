@@ -1,0 +1,64 @@
+{% extends 'restaurant/home.html' %}
+{% load static %}
+{% block content %}
+
+<main class="container py-4 text-center">
+  <h2 class="mb-4 fw-bold text-dark">Наша команда</h2>
+
+  <div class="row justify-content-center">
+
+    <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex">
+      <div class="card shadow rounded-4 h-100 d-flex flex-column">
+        <img src="/media/chef.png" class="card-img-top rounded-top-4" alt="Шеф-повар">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-dark">Марко Россини</h5>
+          <p class="text-muted mb-1">Шеф-повар</p>
+          <p class="card-text">Марко вырос в Неаполе и более 20 лет радует гостей изысканными итальянскими блюдами.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex">
+      <div class="card shadow rounded-4 h-100 d-flex flex-column">
+        <img src="/media//manager.png" class="card-img-top rounded-top-4" alt="Менеджер">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-dark">Елена Верди</h5>
+          <p class="text-muted mb-1">Менеджер зала</p>
+          <p class="card-text">Елена заботится о том, чтобы каждый гость чувствовал себя как дома.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex">
+      <div class="card shadow rounded-4 h-100 d-flex flex-column">
+        <img src="/media//somele.png" class="card-img-top rounded-top-4" alt="Сомелье">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-dark">Карла Д’Анджело</h5>
+          <p class="text-muted mb-1">Сомелье</p>
+          <p class="card-text">Профессионально подбирает вина к каждому блюду, создавая идеальные гастрономические пары.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex">
+      <div class="card shadow rounded-4 h-100 d-flex flex-column">
+        <img src="/media//team.png" class="card-img-top rounded-top-4" alt="Команда обслуживания">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-dark">Команда обслуживания</h5>
+          <p class="text-muted mb-1">Лука Вентури, Жанна Ферреро, Фабио Риччи </p>
+          <p class="card-text">Тепло встречают гостей, сопровождают к столикам и следят за комфортом в зале.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="d-flex gap-2 justify-content-center"> <!-- Используем flexbox и добавляем отступы между кнопками -->
+    <a href="{% url 'restaurant:about' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">Назад</a>
+    <a href="{% url 'restaurant:main' %}" class="btn btn-sm btn-light fw-bold border-dark text-dark shadow-sm mb-0">На главную</a>
+</div>
+        </div>
+
+{% endblock %}
